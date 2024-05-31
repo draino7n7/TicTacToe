@@ -4,9 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                ws('C:/jenkins_workspace/TicTacToe'){
-                    git 'https://github.com/draino7n7/TicTacToe.git'
-                }
+                git 'https://github.com/draino7n7/TicTacToe.git'
             }
         }
 
