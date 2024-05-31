@@ -10,10 +10,7 @@ pipeline {
 
         stage('Current Directory') {
             steps {
-                script {
-                    def cdScript = "jenkins\\cd.bat"
-                    bat script: cdScript, label: 'Current Directory'
-                }
+                bat "jenkins\\cd.bat"
             }
         }
 
