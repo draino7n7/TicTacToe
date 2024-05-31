@@ -8,6 +8,15 @@ pipeline {
             }
         }
 
+        stage('Current Directory') {
+            steps {
+                script {
+                    def editModeScript = "jenkins/cd.bat"
+                    bat script: editModeScript, label: 'Current Directory'
+                }
+            }
+        }
+
         stage('Run Edit Mode Tests') {
             steps {
                 script {
