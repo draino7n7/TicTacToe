@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/draino7n7/TicTacToe.git'
+                git branch: 'main', url 'https://github.com/draino7n7/TicTacToe.git'
             }
         }
 
