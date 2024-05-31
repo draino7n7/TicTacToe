@@ -1,0 +1,45 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/draino7n7/TicTacToe.git'
+            }
+        }
+
+        stage('Build Project') {
+            steps {
+                script {
+                    def buildScript = "jenkins/build_project.bat"
+                    bat script: buildScript, label: 'Build Project'
+                }
+            }
+        }
+
+        stage('Run Edit Mode Tests') {
+            steps {
+                script {
+                    def editModeScript = "jenkins/run_editmode_tests.bat"
+                    bat script: editModeScript, label: 'Run Edit Mode Tests'
+                }
+            }
+        }
+
+        stage('Run Play Mode Tests') {
+            steps {
+                script {
+                    def playModeScript = "jenkins/run_playmode_tests.bat"
+                    bat script: playModeScript, label: 'Run Play Mode Tests'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: '**/TestResults/*.xml', allowEmptyArchive: true
+            junit 'TestResults/*.xml'
+        }
+    }
+}
