@@ -19,17 +19,14 @@ pipeline {
 
         stage('Run Edit Mode Tests') {
             steps {
-                script {
-                    def editModeScript = "jenkins/run_editmode_tests.bat"
-                    bat script: editModeScript, label: 'Run Edit Mode Tests'
-                }
+                bat "jenkins\\run_editmode_tests.bat"
             }
         }
 
         stage('Run Play Mode Tests') {
             steps {
                 script {
-                    def playModeScript = "jenkins/run_playmode_tests.bat"
+                    def playModeScript = "jenkins\\run_playmode_tests.bat"
                     bat script: playModeScript, label: 'Run Play Mode Tests'
                 }
             }
@@ -38,7 +35,7 @@ pipeline {
         stage('Build Project') {
             steps {
                 script {
-                    def buildScript = "jenkins/build_project.bat"
+                    def buildScript = "jenkins\\build_project.bat"
                     bat script: buildScript, label: 'Build Project'
                 }
             }
