@@ -38,6 +38,21 @@ public class GameManager : MonoBehaviour
         NewGame();
     }
 
+    private void Update()
+    {
+        // Check if the Escape key is pressed
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // Exit the application
+            Application.Quit();
+
+            // If running in the editor, stop playing
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#endif
+        }
+    }
+
     public void NewGameButtonPress()
     {
         NewGame();
