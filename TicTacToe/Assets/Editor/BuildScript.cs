@@ -7,8 +7,15 @@ public class BuildScript : MonoBehaviour
     [MenuItem("Build/Build Project")]
     public static void BuildProject()
     {
-        // Define the build path
+        // Define the relative build path
         string buildPath = "Builds/MyGame.exe";
+
+        // Ensure the directory exists
+        string directory = Path.GetDirectoryName(buildPath);
+        if (!Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
 
         // Define the scenes to be included in the build
         string[] scenes = new string[]

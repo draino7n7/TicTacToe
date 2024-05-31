@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2024-05-31 14:42:26Z" end-time="2024-05-31 14:42:36Z" duration="10.0268399">
+  <test-suite type="TestSuite" id="1000" name="TicTacToe" fullname="TicTacToe" runstate="Runnable" testcasecount="1" result="Passed" start-time="2024-05-31 14:42:26Z" end-time="2024-05-31 14:42:36Z" duration="10.026840" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties />
+    <test-suite type="Assembly" id="1003" name="PlayModeTests.dll" fullname="C:/Users/kevin/source/repos/TicTacToe/TicTacToe/Library/ScriptAssemblies/PlayModeTests.dll" runstate="Runnable" testcasecount="1" result="Passed" start-time="2024-05-31 14:42:26Z" end-time="2024-05-31 14:42:36Z" duration="10.021715" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="32960" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+      </properties>
+      <test-suite type="TestFixture" id="1001" name="PlayModeTests" fullname="PlayModeTests" classname="PlayModeTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2024-05-31 14:42:26Z" end-time="2024-05-31 14:42:36Z" duration="10.020527" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1002" name="PlayModeTestsWithEnumeratorPasses" fullname="PlayModeTests.PlayModeTestsWithEnumeratorPasses" methodname="PlayModeTestsWithEnumeratorPasses" classname="PlayModeTests" runstate="Runnable" seed="1466193288" result="Passed" start-time="2024-05-31 14:42:26Z" end-time="2024-05-31 14:42:36Z" duration="10.010970" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
