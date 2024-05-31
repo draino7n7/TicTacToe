@@ -8,15 +8,6 @@ pipeline {
             }
         }
 
-        stage('Build Project') {
-            steps {
-                script {
-                    def buildScript = "jenkins/build_project.bat"
-                    bat script: buildScript, label: 'Build Project'
-                }
-            }
-        }
-
         stage('Run Edit Mode Tests') {
             steps {
                 script {
@@ -31,6 +22,15 @@ pipeline {
                 script {
                     def playModeScript = "jenkins/run_playmode_tests.bat"
                     bat script: playModeScript, label: 'Run Play Mode Tests'
+                }
+            }
+        }
+
+        stage('Build Project') {
+            steps {
+                script {
+                    def buildScript = "jenkins/build_project.bat"
+                    bat script: buildScript, label: 'Build Project'
                 }
             }
         }
