@@ -10,7 +10,7 @@ pipeline {
 
         stage('Current Directory') {
             steps {
-                bat "jenkins\\cd.bat"
+                bat ".\\jenkins\\cd.bat"
             }
         }
 
