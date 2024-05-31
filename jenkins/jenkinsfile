@@ -4,8 +4,10 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                def branch = "${env.BRANCH_NAME}"
-                git branch: branch, url: 'https://github.com/draino7n7/TicTacToe.git', credentialsId: 'github'
+                script{
+                    def branch = "${env.BRANCH_NAME}"
+                    git branch: branch, url: 'https://github.com/draino7n7/TicTacToe.git', credentialsId: 'github'
+                }
             }
         }
 
