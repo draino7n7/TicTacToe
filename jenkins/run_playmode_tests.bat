@@ -1,16 +1,11 @@
 @echo off
 setlocal
 
-REM Path to your Unity executable
-set UNITY_PATH="C:\Program Files\Unity\Hub\Editor\2022.3.31f1\Editor\Unity.exe"
+echo Running Play Mode Tests...
+echo Workspace: %WORKSPACE%
+cd %WORKSPACE%\TicTacToe
 
-REM Path to your Unity project
-set PROJECT_PATH="..\TicTacToe"
-
-REM Path to save the test results
-set RESULTS_PATH="C:\TestResults"
-
-REM Execute the Play mode tests
-%UNITY_PATH% -batchmode -projectPath %PROJECT_PATH% -runTests -testPlatform PlayMode -logFile %RESULTS_PATH%\PlayModeTestResults.log -testResults %RESULTS_PATH%\PlayModeTestResults.xml
+:: Run Unity play mode tests
+"C:\Program Files\Unity\Hub\Editor\2022.3.31f1\Editor\Unity.exe" -batchmode -nographics -quit -projectPath %WORKSPACE%\TicTacToe -runTests -testPlatform playmode -logFile %WORKSPACE%\playmode_tests.log
 
 endlocal
