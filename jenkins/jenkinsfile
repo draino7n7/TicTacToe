@@ -19,12 +19,13 @@ pipeline {
 
         stage('Run Edit Mode Tests') {
             steps {
-                bat "jenkins\\run_editmode_tests.bat"
+                bat ".\\jenkins\\run_editmode_tests.bat"
             }
         }
-
+        
         stage('Run Play Mode Tests') {
             steps {
+                bat ".\\jenkins\\run_playmode_tests.bat"
                 script {
                     def playModeScript = "jenkins\\run_playmode_tests.bat"
                     bat script: playModeScript, label: 'Run Play Mode Tests'
