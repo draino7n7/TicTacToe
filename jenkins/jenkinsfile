@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    options {
+        customWorkspace('C:/jenkins_workspace')
+    }
+
     stages {
         stage('Checkout') {
             steps {
