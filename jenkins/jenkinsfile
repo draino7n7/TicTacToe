@@ -20,14 +20,15 @@ pipeline {
         stage('Run Play Mode Tests') {
             steps {
                 bat ".\\jenkins\\run_playmode_tests.bat"
-                script {
-                    def playModeScript = "jenkins\\run_playmode_tests.bat"
-                    bat script: playModeScript, label: 'Run Play Mode Tests'
-                }
             }
         }
 
         stage('Build Project') {
+            when {
+                expression {
+                    return env.BRANCH_NAME.startsWith('mai')
+                }
+            }
             steps {
                 script {
                     def buildScript = "jenkins\\build_project.bat"
