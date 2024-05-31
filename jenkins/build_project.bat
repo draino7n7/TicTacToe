@@ -6,6 +6,6 @@ echo Workspace: %WORKSPACE%
 cd %WORKSPACE%\TicTacToe
 
 :: Run Unity build command
-"C:\Path\To\Unity\Editor\Unity.exe" -batchmode -nographics -quit -projectPath %WORKSPACE%\TicTacToe -executeMethod BuildScript.BuildProject -logFile %WORKSPACE%\build.log
+"C:\Program Files\Unity\Hub\Editor\2022.3.31f1\Editor\Unity.exe" -batchmode -nographics -quit -projectPath %WORKSPACE%\TicTacToe -executeMethod BuildScript.BuildProject -logFile %WORKSPACE%\build.log
 
 endlocal
