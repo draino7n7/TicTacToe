@@ -11,18 +11,12 @@ pipeline {
             }
         }
 
-        stage('Current Directory') {
-            steps {
-                bat ".\\jenkins\\cd.bat"
-            }
-        }
-
         stage('Run Edit Mode Tests') {
             steps {
                 bat ".\\jenkins\\run_editmode_tests.bat"
             }
         }
-        
+
         stage('Run Play Mode Tests') {
             steps {
                 bat ".\\jenkins\\run_playmode_tests.bat"
@@ -40,13 +34,6 @@ pipeline {
                     bat script: buildScript, label: 'Build Project'
                 }
             }
-        }
-    }
-
-    post {
-        always {
-            archiveArtifacts artifacts: '**/TestResults/*.xml', allowEmptyArchive: true
-            junit 'TestResults/*.xml'
         }
     }
 }
